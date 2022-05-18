@@ -25,9 +25,15 @@
         <a class="logo" href="./index.html">Web<span class="logoblk">Studio</span></a>
 
         <ul class="site-nav">
-            <li class="item"><a href="" class="link current">Cтудия</a></li>
-            <li class="item"><a href="./portfolio.html" class="link">Портфолио</a></li>
-            <li class="item"><a href="" class="link">Контакты</a></li>
+            <li class="item">
+                <a href="" class="link current">Cтудия</a>
+            </li>
+            <li class="item">
+                <a href="./portfolio.html" class="link">Портфолио</a>
+            </li>
+            <li class="item">
+                <a href="" class="link">Контакты</a>
+            </li>
             </ul>
         </nav>
         <ul class="auth-nav">
@@ -53,7 +59,17 @@
         <section class="hero overlay">
                 <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="button">Заказать услугу</button>
+                <!-- Модальное окно-->
+                <button type="button" class="button" data-modal-open>Заказать услугу</button>
+                <div class="backdrop is-hidden" data-modal>
+                    <div class="modal-wrapper">
+                        <button class="modal-btn" data-modal-close>
+                            <svg class="close-icon" width="11" height="11">
+                                <use href="./images/sprite.svg#close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
                 </div>
         </section>
         <!--Особенности-->
@@ -107,12 +123,15 @@
             <ul class="work-list">
                 <li class="item">
                     <img class="images" src="./images/box/box1.jpg" alt="iPad c клавиатурой" width="370" height="294"/>
+                    <p class="image-text">Десктопные приложения</p>
                 </li>
                 <li class="item">
                     <img class="images" src="./images/box/box2.jpg" alt="Работа за ноутбуком" width="370" height="294"/>
+                    <p class="image-text">Мобильные приложения</p>
                 </li>
                 <li class="item">
                     <img class="images" src="./images/box/box3.jpg" alt="выбор цвета на iPad " width="370" height="294"/>
+                    <p class="image-text">Дизайнерские решения</p>
                 </li>
             </ul>
             </div>
@@ -373,13 +392,7 @@
             </div>
         </div>
     </footer>
-    <!--Модальное окно-->
-    <button data-modal-open>Открыть модальное окно</button>
-    <div class="backdrop is-hidden" data-modal>
-        <div class="modal">
-            <button data-modal-close>Закрыть</button>
-        </div>   
-    </div>
+    
     <script src="./js/modal.js"></script>
 </body>
 

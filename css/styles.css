@@ -35,7 +35,6 @@ img {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    /* outline: 2px solid tomato; */
 }  
 .section {
     padding-top: 94px;
@@ -93,6 +92,7 @@ img {
     margin-right: 50px;    
 }
 .site-nav .link {
+    position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -107,6 +107,18 @@ img {
 
 .site-nav .link.current {
     color: var(--accent-color);
+}
+.site-nav .link::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+
+    height: 4px;
+    background-color: #2196F3;
+    border-radius: 2px;
+    bottom: 0;
+    left: 0;
 }
 
 /* Auth nav */
@@ -192,6 +204,7 @@ img {
 .button:hover {
     background-color: #188CE8;
 }
+
 /* .button.primary{
    .button.secondary{  */
 
@@ -239,34 +252,7 @@ img {
     /* background-repeat: no-repeat;
     background-position: center; */
 }
-/* .feature-icon {
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-/* .feature-list .item::before {
-    display:block;
-    content: "";
-    
-    height: 120px;
-    background: #F5F4FA;
-    border-radius: 4px;
-    
-    margin-bottom: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.feature-list .icon-antenna::before {
-    background-image: url("../images/icons/antenna.png");
-}
-.feature-list .icon-clock::before {
-    background-image: url("../images/icons/clock.png");
-}
-.feature-list .icon-diagram::before{
-    background-image: url("../images/icons/diagram.png");
-}
-.feature-list .icon-astronaut::before {
-    background-image: url("../images/icons/astronaut.png");
-} */
+
 .section-title {
     color: var(--title-text-color);
     font-weight: 700;
@@ -300,11 +286,13 @@ img {
    
 }
 .work-list {
+    
     display: flex;
     margin-bottom: 0;
     list-style: none;
 }
 .work-list .item {
+   position: relative;
    margin-right: 30px;  
 }
 .work-list .item:nth-child(3n){
@@ -315,6 +303,35 @@ img {
     height: auto;
     max-width: 100%;
 }
+.work-list .item::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+
+    height: 70px;
+    background-color:rgba(47, 48, 58, 0.8);;
+}
+.image-text {
+    position: absolute;
+    display:block;
+    /* text-align: center; */
+    
+    bottom:27px;
+    right:82px;
+    /* padding-top: 27px ;
+    padding-bottom: 27px; */
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color:#ffffff;
+
+} 
 
 /* Team (Наша команда) */
 
@@ -399,15 +416,6 @@ img {
     background-color: #2196F3;
 }
 
-/* .auth-nav .link:hover,
-.auth-nav .link:focus {
-    color: var(--accent-color);
-}
-
-.auth-nav-icon {
-    margin-right: 10px;
-    fill: currentColor;
-} */
 
 /* Clients */
 
@@ -641,21 +649,42 @@ fill:#ffffff;
     left:0;
     width: 100%;
     height: 100%;
+    z-index: 100;
 
-    background: rgba(43, 168, 74, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
-.backdrop .is-hidden {
+.backdrop.is-hidden {
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
 }
-.modal {
+.modal-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    height: 400px;
-    width: 600px;
+    height: 528px;
+    width: 581px;
 
-    background-color: tomato;
+    background-color: #ffffff;
+}
+.modal-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+
+    width: 30px;
+    height: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+
 }
