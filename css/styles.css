@@ -108,7 +108,7 @@ img {
 .site-nav .link.current {
     color: var(--accent-color);
 }
-.site-nav .link::after {
+.site-nav .link.current::after {
     position: absolute;
     content: "";
     display: block;
